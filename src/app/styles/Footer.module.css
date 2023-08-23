@@ -1,0 +1,112 @@
+.footer {
+  margin-top: 80px;
+  background-color: theme(colors.dark);
+  text-align: center;
+  &Contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 87px;
+    border-bottom: 1px solid theme(colors.white);
+    &Left {
+      max-width: 343px;
+      &Description {
+        margin-top: 20px;
+      }
+    }
+    &Form {
+      width: 343px;
+      margin-top: 50px;
+      & > *:not(:first-child) {
+        margin-top: 32px;
+      }
+    }
+  }
+  &Bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 39px 0 60px 0;
+    &DevName {
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: theme(fontWeight.bold);
+      font-family: theme(fontFamily.spaceGrotesk);
+      color: theme(colors.white);
+    }
+    &IconCon {
+      display: flex;
+      margin-top: 20px;
+    }
+    &Icon {
+      position: relative;
+      width: 20px;
+      height: 19px;
+      &:hover {
+        filter: brightness(0.1) invert(.7) sepia(.5) hue-rotate(100deg) saturate(500%);
+      }
+      &:not(:first-child) {
+        margin-left: 25.6px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: theme(screens.tablet)) {
+  .footer {
+    margin-top: 100px;
+    &Contact {
+      padding-bottom: 92px;
+      &Left {
+        max-width: 445px;
+      }
+      &Form {
+        width: 445px;
+        margin-top: 48px;
+      }
+    }
+    &Bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 30px 0 40px 0;
+      &DevName {
+        font-size: 32px;
+      }
+      &Icon {
+        width: 25px;
+        height: 24px;
+        &:not(:first-child) {
+          margin-left: 32px;
+        }
+      }
+      &IconCon {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: theme(screens.desktop)) {
+  .footer {
+    margin-top: 139px;
+    text-align: start;
+    &Contact {
+      padding-top: 87px;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      &Left {
+        &Description {
+          margin-top: 36px;
+        }
+      }
+      &Form {
+        margin-top: 0;
+      }
+    }
+    &Bottom {
+      padding: 47px 0 92px 0;
+    }
+  }
+}

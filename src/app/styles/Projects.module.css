@@ -1,0 +1,91 @@
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+  &Project {
+    flex-basis: 100%;
+    margin-top: 40px;
+    &View {
+      margin-top: 20px;
+      display: flex;
+      & > :global(.btn):not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+    &ViewOverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      display: none;
+    }
+    &Image {
+      position: relative;
+      width: 100%;
+      padding-top: 73.2857%;
+    }
+    &Title {
+      margin-top: 20px;
+      margin-bottom: 7px;
+    }
+    &Techs {
+      & > span:not(:last-child) {
+        margin-right: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: theme(screens.tablet)) {
+  .projects {
+    margin: 0 -24px;
+    &Project {
+      flex-basis: 50%;
+      padding: 0 24px;
+      margin-top: 60px;
+    }
+  }
+}
+
+@media screen and (min-width: theme(screens.desktop)) {
+  .projects {
+    margin: 0 -4vw;
+    margin-top: 11px;
+    &Project {
+      padding: 0 4vw;
+      margin-top: 69px;
+      &View {
+        display: none;
+      }
+      &Image:hover &ViewOverlay {
+        display: flex;
+        animation: projectViewOverlayAnim 0.4s;
+      }
+      &Image:hover &Link {
+        animation: projectViewOverlayLinkAnim 0.4s;
+      }
+    }
+  }
+}
+
+@keyframes projectViewOverlayAnim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes projectViewOverlayLinkAnim {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: none;
+  }
+}

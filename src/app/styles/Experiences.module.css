@@ -1,0 +1,60 @@
+.experiences {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid transparent;
+  border-top-color: theme(colors.white);
+  border-bottom-color: theme(colors.white);
+  padding-top: 16px;
+  text-align: center;
+  padding-bottom: 40px;
+  margin-bottom: 80px;
+  &Rings {
+    width: 530px;
+    height: 129px;
+    position: absolute;
+    bottom: -65px;
+    right: -344px;
+  }
+  &Item {
+    flex-basis: 100%;
+    margin-top: 24px;
+    :global(.heading-lg) {
+      margin-bottom: 1px;
+    }
+  }
+}
+
+@media screen and (min-width: theme(screens.tablet)) {
+  .experiences {
+    paddint-top: 0;
+    padding-bottom: 0;
+    text-align: start;
+    border-bottom-color: transparent;
+    margin-bottom: 100px;
+    &Rings {
+      right: -332px;
+    }
+    &Item {
+      flex-basis: 50%;
+      margin-top: 52px;
+      :global(.heading-lg) {
+        margin-bottom: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: theme(screens.desktop)) {
+  .experiences {
+    padding-top: 14px;
+    margin-bottom: 140px;
+    &Rings {
+      bottom: -55px;
+      right: -239px;
+    }
+    &Item {
+      flex-basis: 33.333333%;
+      margin-top: 58px;
+    }
+  }
+}

@@ -1,113 +1,197 @@
-import Image from 'next/image'
+import headerStyles from "./styles/Header.module.css";
+import experienceStyles from "./styles/Experiences.module.css";
+import projectsStyles from "./styles/Projects.module.css";
+import footerStyles from "./styles/Footer.module.css";
+import Image from "next/image";
+import Link from "next/link";
+import ContactForm from "./ContactForm";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main style={{ overflowX: "hidden" }}>
+      <header className={`relative ${headerStyles.header}`}>
+        <nav className={`${headerStyles.navbar} relative z-20`}>
+          <div className="container flex justify-between items-center tablet:flex-row flex-col">
+            <h1 className={headerStyles.navbarLogo}>adamkeyes</h1>
+            <div className={headerStyles.navbarIconCon}>
+              {[
+                "icon-github",
+                "icon-frontend-mentor",
+                "icon-linkedin",
+                "icon-twitter",
+              ].map((name, i) => (
+                <div className={headerStyles.navbarIcon} key={i}>
+                  <Image src={`/images/${name}.svg`} alt={name} fill />
+                </div>
+              ))}
+            </div>
+          </div>
+        </nav>
+        <div
+          className={`${headerStyles.hero} container flex tablet:block flex-col items-center relative z-20`}
+        >
+          <h1
+            className={`heading-xl ${headerStyles.heroTitle} text-center tablet:text-start`}
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            Nice to <span style={{ whiteSpace: "nowrap" }}>meet you!</span>{" "}
+            I&apos;m{" "}
+            <span className={headerStyles.heroDevName}>Adam Keyes</span>
+          </h1>
+          <p
+            className={`${headerStyles.heroDesc} text-center tablet:text-start`}
+          >
+            Based in the UK, I’m a front-end developer passionate about building
+            accessible web apps that users love.
+          </p>
+          <Link className="btn" href="#contact">
+            contact me
+          </Link>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <div className={`absolute ${headerStyles.heroDevImage}`}>
+          <Image
+            alt="developer"
+            src="/images/image-profile-desktop.webp"
+            fill
+            style={{ objectFit: "cover", objectPosition: "left" }}
+          />
+        </div>
+        <div className={headerStyles.heroSingleRing}>
+          <Image
+            src="/images/pattern-circle.svg"
+            width={129}
+            height={129}
+            alt="ring"
+          />
+        </div>
+        <div className={headerStyles.heroRings}>
+          <Image
+            src="/images/pattern-rings.svg"
+            width={530}
+            height={129}
+            alt="ring"
+          />
+        </div>
+      </header>
+      <section className="relative">
+        <div className={`container ${experienceStyles.experiences}`}>
+          {[
+            { tech: "HTML", years: 4 },
+            { tech: "CSS", years: 4 },
+            { tech: "Javascript", years: 4 },
+            { tech: "Accessibility", years: 4 },
+            { tech: "React", years: 3 },
+            { tech: "Sass", years: 3 },
+          ].map((experience, i) => (
+            <div className={experienceStyles.experiencesItem} key={i}>
+              <h2 className="heading-lg">{experience.tech}</h2>
+              <p>{experience.years} Years Experience</p>
+            </div>
+          ))}
+        </div>
+        <div className={experienceStyles.experiencesRings}>
+          <Image src="/images/pattern-rings.svg" alt="ring" fill />
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <div className="flex justify-between items-center">
+            <h1 className="heading-xl">Projects</h1>
+            <a href="#contact" className="btn">
+              contact me
+            </a>
+          </div>
+          <div className={projectsStyles.projects}>
+            {[
+              { name: "design portfolio", techs: ["html", "css"] },
+              { name: "e-learning landing page", techs: ["html", "css"] },
+              { name: "todo web app", techs: ["html", "css", "javascript"] },
+              {
+                name: "entertainment web app",
+                techs: ["html", "css", "javascript"],
+              },
+              { name: "memory game", techs: ["html", "css", "javascript"] },
+              {
+                name: "art gallery showcase",
+                techs: ["html", "css", "javascript"],
+              },
+            ].map((project, i) => (
+              <div key={i} className={projectsStyles.projectsProject}>
+                <div className={projectsStyles.projectsProjectImage}>
+                  <Image
+                    src={`/images/thumbnail-project-${i + 1}-large.webp`}
+                    alt="project"
+                    fill
+                    style={{ objectFit: "contain" }}
+                  />
+                  <div className={projectsStyles.projectsProjectViewOverlay}>
+                    <Link
+                      className={`${projectsStyles.projectsProjectLink} btn`}
+                      href="#"
+                    >
+                      view project
+                    </Link>
+                    <Link
+                      className={`${projectsStyles.projectsProjectLink} btn`}
+                      href="#"
+                    >
+                      view code
+                    </Link>
+                  </div>
+                </div>
+                <h3
+                  className={`heading-md ${projectsStyles.projectsProjectTitle}`}
+                >
+                  {project.name}
+                </h3>
+                <div className={projectsStyles.projectsProjectTechs}>
+                  {project.techs.map((tech, j) => (
+                    <span key={j}>{tech}</span>
+                  ))}
+                </div>
+                <div className={projectsStyles.projectsProjectView}>
+                  <Link
+                    className={`${projectsStyles.projectsProjectLink} btn`}
+                    href="#"
+                  >
+                    view project
+                  </Link>
+                  <Link
+                    className={`${projectsStyles.projectsProjectLink} btn`}
+                    href="#"
+                  >
+                    view code
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <footer className={footerStyles.footer} id="contact">
+        <div className="container">
+          <section className={footerStyles.footerContact}>
+            <div className={footerStyles.footerContactLeft}>
+              <h1 className="heading-xl">Contact</h1>
+              <p className={footerStyles.footerContactLeftDescription}>
+                I would love to hear about your project and how I could help.
+                Please fill in the form, and I’ll get back to you as soon as
+                possible.
+              </p>
+            </div>
+            <ContactForm className={footerStyles.footerContactForm} />
+          </section>
+          <div className={footerStyles.footerBottom}>
+            <h2 className={footerStyles.footerBottomDevName}>adamkeyes</h2>
+            <div className={footerStyles.footerBottomIconCon}>
+              {['github', 'frontend-mentor', 'linkedin', 'twitter'].map((iconName, i) => (
+                <Link className={footerStyles.footerBottomIcon} href="#" key={i}>
+                  <Image src={`/images/icon-${iconName}.svg`} fill alt={iconName} />
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
-  )
+  );
 }
