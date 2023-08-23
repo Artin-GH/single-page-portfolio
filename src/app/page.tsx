@@ -21,7 +21,7 @@ export default function Home() {
                 "icon-twitter",
               ].map((name, i) => (
                 <div className={headerStyles.navbarIcon} key={i}>
-                  <Image src={`/images/${name}.svg`} alt={name} fill />
+                  <Image priority src={`/images/${name}.svg`} alt={name} fill />
                 </div>
               ))}
             </div>
@@ -49,6 +49,7 @@ export default function Home() {
         </div>
         <div className={`absolute ${headerStyles.heroDevImage}`}>
           <Image
+            priority
             alt="developer"
             src="/images/image-profile-desktop.webp"
             fill
@@ -57,6 +58,7 @@ export default function Home() {
         </div>
         <div className={headerStyles.heroSingleRing}>
           <Image
+            priority
             src="/images/pattern-circle.svg"
             width={129}
             height={129}
@@ -65,6 +67,7 @@ export default function Home() {
         </div>
         <div className={headerStyles.heroRings}>
           <Image
+            priority
             src="/images/pattern-rings.svg"
             width={530}
             height={129}
@@ -89,7 +92,7 @@ export default function Home() {
           ))}
         </div>
         <div className={experienceStyles.experiencesRings}>
-          <Image src="/images/pattern-rings.svg" alt="ring" fill />
+          <Image priority src="/images/pattern-rings.svg" alt="ring" fill />
         </div>
       </section>
       <section>
@@ -118,6 +121,7 @@ export default function Home() {
               <div key={i} className={projectsStyles.projectsProject}>
                 <div className={projectsStyles.projectsProjectImage}>
                   <Image
+                    priority
                     src={`/images/thumbnail-project-${i + 1}-large.webp`}
                     alt="project"
                     fill
@@ -183,11 +187,22 @@ export default function Home() {
           <div className={footerStyles.footerBottom}>
             <h2 className={footerStyles.footerBottomDevName}>adamkeyes</h2>
             <div className={footerStyles.footerBottomIconCon}>
-              {['github', 'frontend-mentor', 'linkedin', 'twitter'].map((iconName, i) => (
-                <Link className={footerStyles.footerBottomIcon} href="#" key={i}>
-                  <Image src={`/images/icon-${iconName}.svg`} fill alt={iconName} />
-                </Link>
-              ))}
+              {["github", "frontend-mentor", "linkedin", "twitter"].map(
+                (iconName, i) => (
+                  <Link
+                    className={footerStyles.footerBottomIcon}
+                    href="#"
+                    key={i}
+                  >
+                    <Image
+                      priority
+                      src={`/images/icon-${iconName}.svg`}
+                      fill
+                      alt={iconName}
+                    />
+                  </Link>
+                )
+              )}
             </div>
           </div>
         </div>

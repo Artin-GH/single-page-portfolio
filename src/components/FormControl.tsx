@@ -20,6 +20,7 @@ const FormControl: FC<{
           </div>
           <div className="form-control-invalid-format-icon">
             <Image
+              priority
               src="/images/circle-exclamation.svg"
               width={24}
               height={24}
