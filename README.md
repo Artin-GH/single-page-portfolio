@@ -37,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [The Solution](https://www.frontendmentor.io/solutions/single-page-portfolio-nextjs-and-typescript-and-tailwind-and-postcss-qgOZfM-x92)
+- Live Site URL: [The Live Project](https://single-page-portfolio-orcin.vercel.app)
 
 ## My process
 
